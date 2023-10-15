@@ -4,13 +4,26 @@
             *{
                 inset: 0;
                 margin: 0;
+                width: 100%;
             }
         </style>
     </head>
     <body>
-        <img id="screen" src="./stream">
+        <canvas id="c"></canvas>
         <script>
-            const img = document.getElementById("screen");
+            let c = document.getElementById("c");
+            let ctx = c.getContext("2d");
+
+            let img;
+            setInterval(()=>{
+                if(img){
+                    c.width = img.width;
+                    c.height = img.height;
+                    ctx.drawImage(img,0,0,c.width, c.height);
+                }
+                img = document.createElement("img");
+                img.src = "./stream";
+            },1000/5);
             
         </script>
     </body>
