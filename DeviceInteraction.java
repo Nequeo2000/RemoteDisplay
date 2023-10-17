@@ -17,7 +17,6 @@ public class DeviceInteraction
             return img;
             //File f = new File("test.png");
             //ImageIO.write(img, "png", f);
-
         }
         catch(Exception e){
             System.out.println(e);
