@@ -14,16 +14,20 @@
             let c = document.getElementById("c");
             let ctx = c.getContext("2d");
 
-            let img;
-            setInterval(()=>{
-                if(img){
-                    c.width = img.width;
-                    c.height = img.height;
-                    ctx.drawImage(img,0,0,c.width, c.height);
-                }
-                img = document.createElement("img");
+            let img = new Image();
+            img.onload = (e)=>{
+                draw();
+            };
+
+            function draw(){
                 img.src = "./stream";
-            },1000/5);
+                c.width = img.width;
+                c.height = img.height;
+
+                ctx.drawImage(img,0,0,c.width,c.height);
+            };
+
+            window.onload = ()=>{draw();};
         </script>
     </body>
 </html>
