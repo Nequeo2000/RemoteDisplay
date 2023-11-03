@@ -1,6 +1,6 @@
 # RemoteDisplay
 
-A java application build to remotely control a Ressberry Pi like device.
+A java application build to share the desktop of a Ressberry Pi like device over the local network.
 The device in question is required to run a GUI-version of Linux or Windows.
 
 Developed and tested on Java 11.
