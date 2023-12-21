@@ -16,18 +16,18 @@
 
             let img = new Image();
             img.onload = (e)=>{
-                draw();
-            };
-
-            function draw(){
-                img.src = "./stream";
                 c.width = img.width;
                 c.height = img.height;
-
                 ctx.drawImage(img,0,0,c.width,c.height);
+                
+                requestScreenshot();
             };
 
-            window.onload = ()=>{draw();};
+            function requestScreenshot(){
+                img.src = "./stream";
+            };
+
+            window.onload = ()=>{requestScreenshot();};
         </script>
     </body>
 </html>
